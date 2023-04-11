@@ -1,0 +1,10 @@
+
+Stack is an ordered collection of items into which new items may be inserted and form which items may be deleted at one end,
+called the top of the stack. It is also called LIFO list. 
+
+Functions 
+--> push()
+-->pop()
+-->isfull()
+-->isempty()
+-->peek()/top();
