@@ -1,19 +1,22 @@
 #define StackSize 100
 
+#ifndef STACK_H
+#define STACK_H
+template<class T>
 class Stack
 {
 public:
 	Stack();
 	int top;
-	int data[StackSize];
+	T data[StackSize];
 	
 	void push(int data);
-	int  pop();
+	T  pop();
 
 	bool isEmpty();
 	bool isFull();
 
-	int peek();
+	T peek();
 
 	void print();
 
@@ -22,3 +25,5 @@ private:
 
 };
 
+#include<Stackimpl.h>
+#endif
