@@ -2,6 +2,7 @@
 
 #ifndef STACK_H
 #define STACK_H
+
 template<class T>
 class Stack
 {
@@ -25,5 +26,5 @@ private:
 
 };
 
-#include<Stackimpl.h>
+#include"Stack.cpp"
 #endif
