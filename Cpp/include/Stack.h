@@ -1,4 +1,4 @@
-#define StackSize 100
+
 
 #ifndef STACK_H
 #define STACK_H
@@ -7,24 +7,19 @@ template<class T>
 class Stack
 {
 public:
-	Stack();
-	int top;
-	T data[StackSize];
 	
-	void push(int data);
-	T  pop();
+	void push(int data)=0;
+	T  pop()=0;
 
-	bool isEmpty();
-	bool isFull();
+	bool isEmpty()=0;
+	bool isFull()=0;
 
-	T peek();
+	T peek()=0;
 
-	void print();
+	void print()=0;
 
 
 private:
 
 };
-
-#include"Stack.cpp"
 #endif

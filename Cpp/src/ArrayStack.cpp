@@ -1,15 +1,15 @@
+#include<ArrayStack.h>
 #include<iostream>
 using namespace std;
 
 template <class T>
-Stack<T>::Stack() {
+ArrayStack<T>::ArrayStack() {
 
 	top = -1;
 }
 
-
 template <class T>
-void Stack<T>::push(int info) {
+void ArrayStack<T>::push(int info) {
 	if (isFull()) {
 		cout << "The Stack is fulll";
 		cout << "It will now not hold more elements \n";
@@ -22,7 +22,7 @@ void Stack<T>::push(int info) {
 }
 
 template <class T>
-T Stack<T>::pop() {
+T ArrayStack<T>::pop() {
 	if (isEmpty()) {
 		cout << "The stack is empty!!!!!\n";
 		cout << "Nothing to pop \n";
@@ -38,27 +38,29 @@ T Stack<T>::pop() {
 }
 
 template <class T>
-bool Stack<T>::isEmpty() {
+bool ArrayStack<T>::isEmpty() {
 	if (top == -1) return true;
 	else return false;
 
 }
 
 template <class T>
-bool Stack<T>::isFull() {
+bool ArrayStack<T>::isFull() {
 	if (top == StackSize - 1) return true;
 	else return false;
 }
 
 template <class T>
-T Stack<T>::peek() {
+T ArrayStack<T>::peek() {
+	return data[top];
 
 }
 
 template <class T>
-void Stack<T>::print() {
-	for (int i = 0; i < top+1; i++) {
+void ArrayStack<T>::print() {
+	for (int i = top; i>=0; i--) {
 		cout<<(data[i]);
 		cout << endl;
 	}
 }
+

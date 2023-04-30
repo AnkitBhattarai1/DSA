@@ -35,12 +35,23 @@ public:
 	T removeFromHead();
 	T remove(Node<T>* pred);
 	T remove(T data);
+	Node<T>* retrive(T data);
+	bool search(T data);
 
 
 
 	Node<T>* findprev(Node<T>* node);
+	//Node<T>* findnode(T data);
 
 	void traverse();
+
+	Node<T>* getHead() {
+		return HEAD;
+	}
+
+	Node<T>* getTail() {
+		return TAIL;
+	}
 
 	
 

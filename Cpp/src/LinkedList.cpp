@@ -32,6 +32,7 @@ template<class T>LinkedList<T>::LinkedList() {	//Initializes an empty LinkedList
 	HEAD = NULL;
 }
 
+
 template<class T>
 bool LinkedList<T>::isEmpty() { //checks if the LinkedList is empty or not.
 	if (HEAD == NULL) return true;
@@ -101,10 +102,8 @@ Node<T>* LinkedList<T>::add(T data, Node<T>* node) {
 	}
 
 	else {
-		Node<T>* pred = findprev(node);
-		newnode->setnext(pred->getnext());
-		pred->setnext(newnode);
-
+		newnode->setnext(node->getnext());
+		node->setnext(newnode);
 		return newnode;
 	}
 
@@ -172,7 +171,13 @@ T LinkedList<T>::remove(Node<T>* node) {
 	}
 }
 
+template<class T>
+T LinkedList<T>::remove(T data) {
+	Node<T>* nodeToDelete = retrive(data);
 
+	 return remove(nodeToDelete);
+
+}
 
 template <class T>
 void LinkedList<T>::traverse() {
@@ -184,8 +189,6 @@ void LinkedList<T>::traverse() {
 	}
 }
 
-
-
 template<class T>
 Node<T>* LinkedList<T>::findprev(Node<T> * node) {
 	Node<T>* temp = HEAD;
@@ -196,6 +199,23 @@ Node<T>* LinkedList<T>::findprev(Node<T> * node) {
 	return temp;
 
 }
+
+template<class T>
+Node<T>* LinkedList<T>::retrive(T data) {
+
+	for (Node<T>* temp = HEAD; temp != NULL; temp = temp->getnext()) {
+		if (temp->getData() == data) return temp;
+	}
+
+	return NULL;
+}
+
+template<class T>
+bool LinkedList<T>::search(T data) {
+	if ((retrive(data)) != NULL) return true;
+	else return false;
+}
+
 
 
 
